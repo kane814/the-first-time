@@ -8,7 +8,7 @@ int main(void)
     printf("%d + %d = %d\n", a, b, h);
     printf("%d\n",2%2);
 */    
-/*  int n;
+    int n;
     double sum=0.0;
     scanf("%d", &n);
     while(n>0)
@@ -24,7 +24,7 @@ int main(void)
         }
     }
     printf("Sum = %f\n", sum);
-*/
+
 /*    int n;
     scanf("%d", &n);
     int m=n;
