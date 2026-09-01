@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <stdbool.h>
+//void f(const int* p)
+void f(int *b);
+
 int main(void)
 {
 /*  int a = 10;
@@ -88,7 +91,7 @@ int main(void)
     float h=1.5;
     printf("%.2f",h);
 */    
-    int x=5,y=2;
+/*  int x=5,y=2;
     int z;
 //  z=(y*x)++; 出错了，y*x是一个表达式，不能作为左值 
     z=y*x++; //x先参与运算再自增
@@ -99,6 +102,21 @@ int main(void)
         a=6;
         printf("%d\n", a);
     } 
-
+*/
+    int a[10]={1,2,3,4,5};
+    int *p=a;
+    printf("%d",p[1]);
+    int x=10;
+    f(&x);
+   
     return 0;
+}
+/*void f(const int* b)  //107行
+{
+  *b=2 会报错
+}
+*/
+void f(int* b)  //107行 const int *b是锁了*b，*b不能改
+{
+  *b=2;
 }
