@@ -2,7 +2,8 @@
 #include <stdbool.h>
 //void f(const int* p)
 void f(int *b);
-
+int mystrlen(const char*);
+int mystrcmp(const char*,const char*);
 int main(void)
 {
 /*  int a = 10;
@@ -11,7 +12,7 @@ int main(void)
     printf("%d + %d = %d\n", a, b, h);
     printf("%d\n",2%2);
 */    
-    int n;
+/*  int n;
     double sum=0.0;
     scanf("%d", &n);
     while(n>0)
@@ -27,7 +28,7 @@ int main(void)
         }
     }
     printf("Sum = %f\n", sum);
-
+*/
 /*    int n;
     scanf("%d", &n);
     int m=n;
@@ -103,14 +104,30 @@ int main(void)
         printf("%d\n", a);
     } 
 */
-    int a[10]={1,2,3,4,5};
+/* int a[10]={1,2,3,4,5};
     int *p=a;
     printf("%d",p[1]);
     int x=10;
     f(&x);
-   
+    char *lance="hello"; //char lance[]="lance"
+*/    
+    char *a[12];
+    a[1]="1月"; //指针数组,指针还是指向首项
+    a[2]="2月";
+// ......
+// 此处做交互，找a[i];
+    printf("%s\n",a[1]); 
+    printf("%p\n",a[1]);
+    printf("%p\n",a[2]);       
+
+    //尝试写strlen
+    printf("%d\n",mystrlen("hello"));
+    
+    //尝试写strcmp
+    printf("%d\n",mystrcmp("helloh","afghu"));
     return 0;
 }
+
 /*void f(const int* b)  //107行
 {
   *b=2 会报错
@@ -119,4 +136,20 @@ int main(void)
 void f(int* b)  //107行 const int *b是锁了*b，*b不能改
 {
   *b=2;
+}
+int mystrlen(const char*a)
+{
+int i=0;
+while(a[i]!='\0'){
+    i++;
+}
+return i;
+}
+int mystrcmp(const char*a,const char*b)
+{
+int i = 0;
+    while (a[i] != '\0' && a[i] == b[i]) {
+        i++;
+    }
+    return a[i] - b[i];   // 第一个不同处（或结尾）的差值
 }
