@@ -19,12 +19,11 @@ int main(){
     p=p->next;
 }
 printf("NULL\n");
-    p=n1;
-    printf("%p\n",(void*)n1);
-    while(n1!=NULL){
-        struct Node*temp=n1;     //指针遍历
-        n1=n1->next;
-        printf("%p\n",(void*)n1);
+    printf("%p\n",(void*)p);
+    while(p!=NULL){
+        struct Node*temp=p;     //指针遍历
+        p=p->next;
+        printf("%p\n",(void*)p);
         free(temp);
     }
     return 0; 
